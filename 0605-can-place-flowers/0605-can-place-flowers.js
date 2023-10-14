@@ -12,7 +12,7 @@ var canPlaceFlowers = function(flowerbed, n) {
     }
     else if(a == 1 && flowerbed[0] == 1)
     {
-    return false
+    return false;
     }
     if(flowerbed[0] == 0 && flowerbed[1] == 0)
          {
@@ -26,6 +26,7 @@ var canPlaceFlowers = function(flowerbed, n) {
              n--;
              flowerbed[i] = 1;
          }
+        
      }
      if(flowerbed[a-1] == 0 && flowerbed[a-2] == 0)
          {
