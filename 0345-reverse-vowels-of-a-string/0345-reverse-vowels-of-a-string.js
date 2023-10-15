@@ -7,7 +7,6 @@ var reverseVowels = function(s) {
     let i = 0;
     let j = n - 1;
 
-    // Convert the string to an array to make swapping possible
     let chars = s.split('');
 
     while (i < j) {
@@ -16,7 +15,6 @@ var reverseVowels = function(s) {
         } else if (!'aeiouAEIOU'.includes(chars[j])) {
             j--;
         } else {
-            // Swap vowels
             let temp = chars[i];
             chars[i] = chars[j];
             chars[j] = temp;
@@ -24,7 +22,5 @@ var reverseVowels = function(s) {
             j--;
         }
     }
-
-    // Convert the array back to a string
     return chars.join('');
 };
