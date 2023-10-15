@@ -3,19 +3,28 @@
  * @return {string}
  */
 var reverseVowels = function(s) {
-   const VOWELS = { 'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1 };
-    const arr = s.split('');
-    let i = 0, j = arr.length - 1;
+    let n = s.length;
+    let i = 0;
+    let j = n - 1;
+
+    // Convert the string to an array to make swapping possible
+    let chars = s.split('');
+
     while (i < j) {
-        if (VOWELS[arr[i]] && VOWELS[arr[j]]) {
-            [arr[i], arr[j]] = [arr[j], arr[i]];
+        if (!'aeiouAEIOU'.includes(chars[i])) {
             i++;
-            j--;
-        } else if (VOWELS[arr[i]]) {
+        } else if (!'aeiouAEIOU'.includes(chars[j])) {
             j--;
         } else {
+            // Swap vowels
+            let temp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = temp;
             i++;
+            j--;
         }
     }
-    return arr.join('');
+
+    // Convert the array back to a string
+    return chars.join('');
 };
